@@ -179,3 +179,4 @@ fabric.properties
 # Project
 secret.json
 conf/settings/production.py
+assets/
