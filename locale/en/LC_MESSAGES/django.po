@@ -36,7 +36,7 @@ msgstr "Golf"
 
 #: golf/models.py:9
 msgid "Thailand"
-msgstr "Thiland"
+msgstr "Thailand"
 
 #: golf/models.py:10
 msgid "South Korea"
