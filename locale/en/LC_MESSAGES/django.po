@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-22 17:16+0700\n"
+"POT-Creation-Date: 2019-10-23 13:45+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,19 +34,19 @@ msgstr "English"
 msgid "Golf"
 msgstr "Golf"
 
-#: golf/models.py:9
+#: golf/models.py:9 golf/models.py:51
 msgid "Thailand"
 msgstr "Thailand"
 
-#: golf/models.py:10
+#: golf/models.py:10 golf/models.py:52
 msgid "South Korea"
 msgstr "South Korea"
 
-#: golf/models.py:11
+#: golf/models.py:11 golf/models.py:53
 msgid "Japan"
 msgstr "Japan"
 
-#: golf/models.py:12
+#: golf/models.py:12 golf/models.py:54
 msgid "China"
 msgstr "China"
 
@@ -58,7 +58,7 @@ msgstr "Holiday name"
 msgid "Holiday date"
 msgstr "Holiday date"
 
-#: golf/models.py:26
+#: golf/models.py:26 golf/models.py:130
 msgid "Country code"
 msgstr "Country code"
 
@@ -69,3 +69,79 @@ msgstr "Holiday"
 #: golf/models.py:34
 msgid "Holidays"
 msgstr "Holidays"
+
+#: golf/models.py:44
+msgid "18 Holes"
+msgstr "18 Holes"
+
+#: golf/models.py:45
+msgid "9 Holes"
+msgstr "9 Holes"
+
+#: golf/models.py:46
+msgid "27 Holes"
+msgstr "27 Holes"
+
+#: golf/models.py:47
+msgid "36 Holes"
+msgstr "36 Holes"
+
+#: golf/models.py:58
+msgid "Golf club name"
+msgstr "Golf club name"
+
+#: golf/models.py:63
+msgid "Phone number"
+msgstr "Phone number"
+
+#: golf/models.py:70
+msgid "Email address"
+msgstr "Email address"
+
+#: golf/models.py:77
+msgid "Website"
+msgstr "Website"
+
+#: golf/models.py:84
+msgid "No. of holes"
+msgstr "No. of holes"
+
+#: golf/models.py:91
+msgid "Cart fee"
+msgstr "Cart fee"
+
+#: golf/models.py:94 golf/models.py:101
+msgid "THB"
+msgstr "THB"
+
+#: golf/models.py:98
+msgid "Caddie fee"
+msgstr "Caddie fee"
+
+#: golf/models.py:105
+msgid "High season"
+msgstr "High season"
+
+#: golf/models.py:110
+msgid "Max # of High/Weekday"
+msgstr "Max # of High/Weekday"
+
+#: golf/models.py:115
+msgid "Max # of High/Weekend"
+msgstr "Max # of High/Weekend"
+
+#: golf/models.py:120
+msgid "Max # of Low/Weekday"
+msgstr "Max # of Low/Weekday"
+
+#: golf/models.py:125
+msgid "Max # of Low/Weekend"
+msgstr "Max # of Low/Weekend"
+
+#: golf/models.py:137
+msgid "Golf club"
+msgstr "Golf club"
+
+#: golf/models.py:138
+msgid "Golf clubs"
+msgstr "Golf clubs"

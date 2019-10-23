@@ -11,4 +11,9 @@ class HolidayAdmin(admin.ModelAdmin):
     date_hierarchy = 'holiday'
 
 
+class GolfClubAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(models.Holiday, HolidayAdmin)
+admin.site.register(models.GolfClub, GolfClubAdmin)
