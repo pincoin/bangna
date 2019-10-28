@@ -38,6 +38,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            os.path.join(BASE_DIR, 'conf', 'templates'),
+            os.path.join(BASE_DIR, 'golf', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

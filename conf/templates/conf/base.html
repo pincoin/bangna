@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="vxKx8mxChlihmBeKDSEQC8d80w5fumClv2rqebEZ0X8" />
+    <title>NaOne : {% block title %}{% endblock %}</title>
+    {% block stylesheet %}
+        <link rel="stylesheet"
+              href="{% static "conf/css/sarabun.css" %}">
+        <link rel="stylesheet"
+              href="{% static "conf/css/windmill.css" %}">
+        <link rel="stylesheet"
+              href="{% static "conf/css/base.css" %}">
+        <link rel="stylesheet"
+              href="//use.fontawesome.com/releases/v5.10.1/css/all.css"
+              integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe"
+              crossorigin="anonymous">
+        <link rel="apple-touch-icon" sizes="180x180"
+              href="{% static 'conf/favicon/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32"
+              href="{% static 'conf/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16"
+              href="{% static 'conf/favicon/favicon-16x16.png' %}">
+        {{ form.media.css }}
+    {% endblock %}
+</head>
+<body>
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<div id="gray-background"></div>
+
+<!-- sidenav -->
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">
+                <img src="{% static 'conf/images/logo.png' %}"
+                     width="180" alt="NaOne">
+            </a>
+            <a class="navbar-burger">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Golf clubs
+                </a>
+                <a class="navbar-item">
+                    Hotels
+                </a>
+                <a class="navbar-item">
+                    Transport
+                </a>
+                <a class="navbar-item">
+                    Restaurants
+                </a>
+            </div>
+
+            <div class="navbar-end">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>{% block content %}{% endblock %}</main>
+
+<footer class="footer has-background-grey-lighter">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                Copyright &copy; {% now "Y" %} <strong>NaOne</strong>
+                All Rights Reserved.
+            </div>
+            <div class="column has-text-right-tablet">
+                <form class="is-inline" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                    <div class="select is-small">
+                        <select id="language-selector" name="language">
+                            {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                        selected{% endif %}>
+                                    {{ language.name_local }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% if messages %}
+    <div style="display:none">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+</body>
+
+{% block javascript %}
+    <script type="text/javascript"
+            src="{% static "conf/js/vendor/jquery-3.4.1.min.js" %}"></script>
+    <script type="text/javascript"
+            src="{% static "conf/js/base.js" %}"></script>
+    {{ form.media.js }}
+{% endblock %}
+</html>
