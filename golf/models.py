@@ -59,6 +59,12 @@ class GolfClub(model_utils_models.TimeStampedModel):
         max_length=255,
     )
 
+    code = models.CharField(
+        verbose_name=_('Golf club code'),
+        max_length=255,
+        unique=True,
+    )
+
     phone = models.CharField(
         verbose_name=_('Phone number'),
         max_length=16,

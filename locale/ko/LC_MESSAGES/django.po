@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-23 13:45+0700\n"
+"POT-Creation-Date: 2019-10-28 19:37+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +57,7 @@ msgstr "공휴일 이름"
 msgid "Holiday date"
 msgstr "공휴일 일자"
 
-#: golf/models.py:26 golf/models.py:130
+#: golf/models.py:26 golf/models.py:136
 msgid "Country code"
 msgstr "국가 코드"
 
@@ -91,57 +90,61 @@ msgid "Golf club name"
 msgstr "골프클럽 이름"
 
 #: golf/models.py:63
+msgid "Golf club code"
+msgstr "골프클럽 코드"
+
+#: golf/models.py:69
 msgid "Phone number"
 msgstr "전화번호"
 
-#: golf/models.py:70
+#: golf/models.py:76
 msgid "Email address"
 msgstr "이메일주소"
 
-#: golf/models.py:77
+#: golf/models.py:83
 msgid "Website"
 msgstr "홈페이지"
 
-#: golf/models.py:84
+#: golf/models.py:90
 msgid "No. of holes"
 msgstr "홀수"
 
-#: golf/models.py:91
+#: golf/models.py:97
 msgid "Cart fee"
 msgstr "카트요금"
 
-#: golf/models.py:94 golf/models.py:101
+#: golf/models.py:100 golf/models.py:107
 msgid "THB"
 msgstr "THB"
 
-#: golf/models.py:98
+#: golf/models.py:104
 msgid "Caddie fee"
 msgstr "캐디요금"
 
-#: golf/models.py:105
+#: golf/models.py:111
 msgid "High season"
 msgstr "성수기"
 
-#: golf/models.py:110
+#: golf/models.py:116
 msgid "Max # of High/Weekday"
 msgstr "성수기/평일 최대"
 
-#: golf/models.py:115
+#: golf/models.py:121
 msgid "Max # of High/Weekend"
 msgstr "성수기/휴일 최대"
 
-#: golf/models.py:120
+#: golf/models.py:126
 msgid "Max # of Low/Weekday"
 msgstr "비수기/평일 최대"
 
-#: golf/models.py:125
+#: golf/models.py:131
 msgid "Max # of Low/Weekend"
 msgstr "비수기/휴일 최대"
 
-#: golf/models.py:137
+#: golf/models.py:143
 msgid "Golf club"
 msgstr "골프클럽"
 
-#: golf/models.py:138
+#: golf/models.py:144
 msgid "Golf clubs"
 msgstr "골프클럽"
