@@ -16,6 +16,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+]
+
+INSTALLED_APPS += [
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 INSTALLED_APPS += [
@@ -59,6 +66,11 @@ STATICFILES_FINDERS = (
 )
 
 WSGI_APPLICATION = 'conf.wsgi.application'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

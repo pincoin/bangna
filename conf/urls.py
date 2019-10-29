@@ -11,6 +11,8 @@ urlpatterns = [
     path('i18n/',
          include('django.conf.urls.i18n')),
 
+    path('accounts/', include('allauth.urls')),
+
     path('',
          HomeView.as_view(), name='home'),
 ]
