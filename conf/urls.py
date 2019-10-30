@@ -13,6 +13,9 @@ urlpatterns = [
 
     path('accounts/', include('allauth.urls')),
 
+    path('golf/',
+         include('golf.urls', namespace='golf')),
+
     path('',
          HomeView.as_view(), name='home'),
 ]

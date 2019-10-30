@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-28 19:37+0700\n"
+"POT-Creation-Date: 2019-10-30 22:03+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,3 +148,7 @@ msgstr "골프클럽"
 #: golf/models.py:144
 msgid "Golf clubs"
 msgstr "골프클럽"
+
+#: golf/views.py:10
+msgid "Calendar Year {}"
+msgstr "{}년 달력"

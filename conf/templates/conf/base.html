@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="vxKx8mxChlihmBeKDSEQC8d80w5fumClv2rqebEZ0X8" />
+    <meta name="google-site-verification" content="vxKx8mxChlihmBeKDSEQC8d80w5fumClv2rqebEZ0X8"/>
     <title>NaOne : {% block title %}{% endblock %}</title>
     {% block stylesheet %}
         <link rel="stylesheet"
@@ -65,11 +65,26 @@
                 <a class="navbar-item">
                     Restaurants
                 </a>
-            </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Calendar(TH)
+                    </a>
 
-            <div class="navbar-end">
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="{% url 'golf:monthly-calendar-list' 2019 %}">
+                            2019
+                        </a>
+                        <a class="navbar-item" href="{% url 'golf:monthly-calendar-list' 2020 %}">
+                            2020
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="navbar-end">
+        </div>
+    </div>
     </div>
 </nav>
 
