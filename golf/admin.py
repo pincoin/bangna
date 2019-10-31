@@ -1,6 +1,14 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from . import models
+
+
+class BookingTeeOffInline(admin.TabularInline):
+    model = models.BookingTeeOff
+    extra = 1
+    fields = ('tee_off_time',)
+    ordering = ('tee_off_time',)
 
 
 class HolidayAdmin(admin.ModelAdmin):
@@ -15,5 +23,33 @@ class GolfClubAdmin(admin.ModelAdmin):
     pass
 
 
+class BookingAdmin(admin.ModelAdmin):
+    fieldsets = (
+        (_('Booking info'), {
+            'fields': (
+                'agent', 'round_date', 'round_time',
+            )
+        }),
+        (_('Customer info'), {
+            'fields': (
+                'last_name', 'first_name', 'pax',
+            )
+        }),
+        (_('Pay info'), {
+            'fields': (
+                'green_fee_sales', 'green_fee_pay_on_arrival',
+                'cart_fee_sales', 'cart_fee_pay_on_arrival',
+                'caddie_fee_sales', 'caddie_fee_pay_on_arrival',
+                'green_fee_cost', 'cart_fee_cost', 'caddie_fee_cost',
+            )
+        })
+        ,
+    )
+    inlines = (BookingTeeOffInline,)
+    date_hierarchy = 'round_date'
+    ordering = ('-round_date',)
+
+
 admin.site.register(models.Holiday, HolidayAdmin)
 admin.site.register(models.GolfClub, GolfClubAdmin)
+admin.site.register(models.Booking, BookingAdmin)

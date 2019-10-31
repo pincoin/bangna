@@ -1,3 +1,6 @@
+import uuid
+
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from model_utils import Choices
@@ -145,3 +148,206 @@ class GolfClub(model_utils_models.TimeStampedModel):
 
     def __str__(self):
         return '{} {} {}'.format(self.title, self.email, self.phone)
+
+
+class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStampedModel):
+    SEASON_CHOICES = Choices(
+        (0, 'low', _('Low season')),
+        (1, 'high', _('High season')),
+    )
+
+    DAY_CHOICES = Choices(
+        (0, 'weekday', _('Weekday')),
+        (1, 'weekend', _('Weekend')),
+    )
+
+    SLOT_CHOICES = Choices(
+        (0, 'morning', _('Morning')),
+        (1, 'daytime', _('Daytime')),
+        (2, 'twilight', _('Twilight')),
+        (3, 'night', _('Night')),
+    )
+
+    STATUS_CHOICES = Choices(
+        (0, 'order_opened', _('order opened')),
+        (1, 'order_pending', _('order pending')),
+        (2, 'payment_pending', _('payment pending')),
+        (3, 'completed', _('order complete')),
+        (4, 'offered', _('order offered')),
+        (5, 'voided', _('order voided')),
+        (6, 'refund_requested', _('refund requested')),
+        (7, 'refund_pending', _('refund pending')),
+        (8, 'refunded1', _('order refunded(original)')),  # original order
+        (9, 'refunded2', _('order refunded(reverse)')),  # refund order
+    )
+
+    booking_uuid = models.UUIDField(
+        verbose_name=_('UUID'),
+        unique=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+
+    agent = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_('Requester'),
+        db_index=True,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
+    round_date = models.DateField(
+        verbose_name=_('Round day'),
+        db_index=True,
+    )
+
+    round_time = models.TimeField(
+        verbose_name=_('Round time'),
+    )
+
+    pax = models.IntegerField(
+        verbose_name=_('Pax'),
+    )
+
+    green_fee_sales = models.DecimalField(
+        verbose_name=_('Green fee sales'),
+        max_digits=11,
+        decimal_places=2,
+        help_text=_('THB'),
+    )
+
+    cart_fee_sales = models.DecimalField(
+        verbose_name=_('Cart fee sales'),
+        max_digits=11,
+        decimal_places=2,
+        help_text=_('THB'),
+    )
+
+    caddie_fee_sales = models.DecimalField(
+        verbose_name=_('Caddie fee sales'),
+        max_digits=11,
+        decimal_places=2,
+        help_text=_('THB'),
+    )
+
+    green_fee_pay_on_arrival = models.BooleanField(
+        verbose_name=_('Green fee pay on arrival'),
+        default=False,
+        db_index=True,
+    )
+
+    cart_fee_pay_on_arrival = models.BooleanField(
+        verbose_name=_('Cart fee pay on arrival'),
+        default=False,
+        db_index=True,
+    )
+
+    caddie_fee_pay_on_arrival = models.BooleanField(
+        verbose_name=_('Caddie fee pay on arrival'),
+        default=False,
+        db_index=True,
+    )
+
+    green_fee_cost = models.DecimalField(
+        verbose_name=_('Green fee cost'),
+        max_digits=11,
+        decimal_places=2,
+        help_text=_('THB'),
+    )
+
+    cart_fee_cost = models.DecimalField(
+        verbose_name=_('Cart fee cost'),
+        max_digits=11,
+        decimal_places=2,
+        help_text=_('THB'),
+    )
+
+    caddie_fee_cost = models.DecimalField(
+        verbose_name=_('Caddie fee cost'),
+        max_digits=11,
+        decimal_places=2,
+        help_text=_('THB'),
+    )
+
+    first_name = models.CharField(
+        verbose_name=_('First name'),
+        max_length=255,
+    )
+
+    last_name = models.CharField(
+        verbose_name=_('Last name'),
+        max_length=255,
+    )
+
+    fullname = models.CharField(
+        verbose_name=_('Full name'),
+        max_length=255,
+    )
+
+    memo = models.TextField(
+        verbose_name=_('Memo'),
+        blank=True,
+        null=True,
+    )
+
+    season = models.IntegerField(
+        verbose_name=_('High/Low Season'),
+        choices=SEASON_CHOICES,
+        default=SEASON_CHOICES.high,
+        db_index=True,
+    )
+
+    day_of_week = models.IntegerField(
+        verbose_name=_('Day of week'),
+        choices=DAY_CHOICES,
+        default=DAY_CHOICES.weekday,
+        db_index=True,
+    )
+
+    slot = models.IntegerField(
+        verbose_name=_('Time slot'),
+        choices=SLOT_CHOICES,
+        default=SLOT_CHOICES.morning,
+        db_index=True,
+    )
+
+    status = models.IntegerField(
+        verbose_name=_('Booking status'),
+        choices=STATUS_CHOICES,
+        default=STATUS_CHOICES.order_opened,
+        db_index=True,
+    )
+
+    class Meta:
+        verbose_name = _('Booking')
+        verbose_name_plural = _('Booking')
+
+    def __str__(self):
+        return '{}-{} {}'.format(self.booking_uuid, self.first_name, self.last_name)
+
+
+class BookingTeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStampedModel):
+    booking = models.ForeignKey(
+        'golf.Booking',
+        verbose_name=_('Booking'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    tee_off_time = models.TimeField(
+        verbose_name=_('Tee off time'),
+        null=True,
+        blank=True,
+    )
+
+
+
+    class Meta:
+        verbose_name = _('Booking tee-off')
+        verbose_name_plural = _('Booking tee-off')
+
+    def __str__(self):
+        return 'booking - {} / tee off - {} / pax - {}'.format(
+            self.booking.booking_uuid, self.tee_off_time, self.pax
+        )
