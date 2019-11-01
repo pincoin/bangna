@@ -29,6 +29,7 @@ class BookingAdmin(admin.ModelAdmin):
         'green_fee_pay_on_arrival', 'green_fee_sales',
         'cart_fee_pay_on_arrival', 'cart_fee_sales', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',
         'caddie_fee_pay_on_arrival', 'caddie_fee_cost',
+        'received_on_site', 'paid_on_site',
     )
     fieldsets = (
         (_('Booking info'), {

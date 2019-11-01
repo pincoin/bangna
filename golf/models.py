@@ -365,6 +365,21 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         else:
             return '{} {}'.format(self.first_name, self.last_name)
 
+    @property
+    def received_on_site(self):
+        total = 0
+        if self.green_fee_pay_on_arrival:
+            total += self.green_fee_sales
+        if self.caddie_fee_pay_on_arrival:
+            total += self.caddie_fee_sales
+        if self.cart_fee_pay_on_arrival:
+            total += self.cart_fee_sales
+        return total
+
+    @property
+    def paid_on_site(self):
+        return self.green_fee_cost + self.caddie_fee_cost + self.cart_fee_cost
+
 
 class BookingTeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStampedModel):
     booking = models.ForeignKey(
