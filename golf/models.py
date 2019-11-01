@@ -188,7 +188,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         editable=False
     )
 
-    agent = models.ForeignKey(
+    requester = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name=_('Requester'),
         db_index=True,
@@ -341,13 +341,11 @@ class BookingTeeOff(model_utils_models.SoftDeletableModel, model_utils_models.Ti
         blank=True,
     )
 
-
-
     class Meta:
         verbose_name = _('Booking tee-off')
         verbose_name_plural = _('Booking tee-off')
 
     def __str__(self):
-        return 'booking - {} / tee off - {} / pax - {}'.format(
-            self.booking.booking_uuid, self.tee_off_time, self.pax
+        return 'booking - {} / tee off - {}'.format(
+            self.booking.booking_uuid, self.tee_off_time
         )

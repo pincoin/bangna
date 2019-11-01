@@ -27,7 +27,7 @@ class BookingAdmin(admin.ModelAdmin):
     fieldsets = (
         (_('Booking info'), {
             'fields': (
-                'agent', 'round_date', 'round_time',
+                'requester', 'round_date', 'round_time',
             )
         }),
         (_('Customer info'), {
