@@ -264,15 +264,15 @@ msgstr "캐디피 입금"
 
 #: golf/models.py:250
 msgid "Green fee pay on arrival"
-msgstr "그린피 현장결제"
+msgstr "그린피 현장 수금"
 
 #: golf/models.py:256
 msgid "Cart fee pay on arrival"
-msgstr "카트피 현장결제"
+msgstr "카트피 현장 수금"
 
 #: golf/models.py:262
 msgid "Caddie fee pay on arrival"
-msgstr "캐디피 현장결제"
+msgstr "캐디피 현장 수금"
 
 #: golf/models.py:268
 msgid "Green fee cost"
