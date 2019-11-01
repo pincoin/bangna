@@ -24,6 +24,12 @@ class GolfClubAdmin(admin.ModelAdmin):
 
 
 class BookingAdmin(admin.ModelAdmin):
+    list_display = (
+        'booking_uuid', 'first_name', 'last_name', 'pax', 'round_date',
+        'green_fee_pay_on_arrival',
+        'cart_fee_pay_on_arrival', 'cart_fee_sales', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',
+        'caddie_fee_pay_on_arrival', 'caddie_fee_cost',
+    )
     fieldsets = (
         (_('Booking info'), {
             'fields': (
