@@ -27,23 +27,29 @@ class BookingAdmin(admin.ModelAdmin):
     fieldsets = (
         (_('Booking info'), {
             'fields': (
-                'requester', 'round_date', 'round_time',
+                'requester', 'round_date', 'round_time', 'hole',
             )
         }),
         (_('Customer info'), {
             'fields': (
-                'last_name', 'first_name', 'pax',
+                'last_name', 'first_name', 'pax', 'memo',
             )
         }),
-        (_('Pay info'), {
+        (_('Green fee'), {
             'fields': (
-                'green_fee_sales', 'green_fee_pay_on_arrival',
-                'cart_fee_sales', 'cart_fee_pay_on_arrival',
-                'caddie_fee_sales', 'caddie_fee_pay_on_arrival',
-                'green_fee_cost', 'cart_fee_cost', 'caddie_fee_cost',
+                'green_fee_sales', 'green_fee_pay_on_arrival', 'green_fee_cost',
             )
-        })
-        ,
+        }),
+        (_('Caddie fee'), {
+            'fields': (
+                'caddie_fee_sales', 'caddie_fee_pay_on_arrival', 'caddie_fee_cost',
+            )
+        }),
+        (_('Cart fee'), {
+            'fields': (
+                'cart_fee_sales', 'cart_fee_pay_on_arrival', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',
+            )
+        }),
     )
     inlines = (BookingTeeOffInline,)
     date_hierarchy = 'round_date'

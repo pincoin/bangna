@@ -168,6 +168,13 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         (3, 'night', _('Night')),
     )
 
+    HOLE_CHOICES = Choices(
+        (0, 'eighteen', _('18 Holes')),
+        (1, 'nine', _('9 Holes')),
+        (2, 'twentyseven', _('27 Holes')),
+        (3, 'thirtysix', _('36 Holes')),
+    )
+
     STATUS_CHOICES = Choices(
         (0, 'order_opened', _('order opened')),
         (1, 'order_pending', _('order pending')),
@@ -208,6 +215,14 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
 
     pax = models.IntegerField(
         verbose_name=_('Pax'),
+        default=4,
+    )
+
+    hole = models.IntegerField(
+        verbose_name=_('No. of holes'),
+        choices=HOLE_CHOICES,
+        default=HOLE_CHOICES.eighteen,
+        db_index=True,
     )
 
     green_fee_sales = models.DecimalField(
@@ -261,6 +276,11 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         max_digits=11,
         decimal_places=2,
         help_text=_('THB'),
+    )
+
+    cart_fee_deducted_from_deposit = models.IntegerField(
+        verbose_name=_('Cart fee deducted from deposit'),
+        default=0,
     )
 
     caddie_fee_cost = models.DecimalField(

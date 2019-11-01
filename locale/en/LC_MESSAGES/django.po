@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-31 23:08+0700\n"
+"POT-Creation-Date: 2019-11-01 11:18+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,8 +38,16 @@ msgid "Customer info"
 msgstr ""
 
 #: golf/admin.py:38
-msgid "Pay info"
+msgid "Green fee"
 msgstr ""
+
+#: golf/admin.py:43 golf/models.py:107
+msgid "Caddie fee"
+msgstr "Caddie fee"
+
+#: golf/admin.py:48 golf/models.py:100
+msgid "Cart fee"
+msgstr "Cart fee"
 
 #: golf/apps.py:7
 msgid "Golf"
@@ -81,19 +89,19 @@ msgstr "Holiday"
 msgid "Holidays"
 msgstr "Holidays"
 
-#: golf/models.py:47
+#: golf/models.py:47 golf/models.py:172
 msgid "18 Holes"
 msgstr "18 Holes"
 
-#: golf/models.py:48
+#: golf/models.py:48 golf/models.py:173
 msgid "9 Holes"
 msgstr "9 Holes"
 
-#: golf/models.py:49
+#: golf/models.py:49 golf/models.py:174
 msgid "27 Holes"
 msgstr "27 Holes"
 
-#: golf/models.py:50
+#: golf/models.py:50 golf/models.py:175
 msgid "36 Holes"
 msgstr "36 Holes"
 
@@ -117,22 +125,14 @@ msgstr "Email address"
 msgid "Website"
 msgstr "Website"
 
-#: golf/models.py:93
+#: golf/models.py:93 golf/models.py:222
 msgid "No. of holes"
 msgstr "No. of holes"
 
-#: golf/models.py:100
-msgid "Cart fee"
-msgstr "Cart fee"
-
-#: golf/models.py:103 golf/models.py:110 golf/models.py:217 golf/models.py:224
-#: golf/models.py:231 golf/models.py:256 golf/models.py:263 golf/models.py:270
+#: golf/models.py:103 golf/models.py:110 golf/models.py:232 golf/models.py:239
+#: golf/models.py:246 golf/models.py:271 golf/models.py:278 golf/models.py:290
 msgid "THB"
 msgstr "THB"
-
-#: golf/models.py:107
-msgid "Caddie fee"
-msgstr "Caddie fee"
 
 #: golf/models.py:114 golf/models.py:156
 msgid "High season"
@@ -192,157 +192,163 @@ msgstr ""
 msgid "Night"
 msgstr ""
 
-#: golf/models.py:172
+#: golf/models.py:179
 msgid "order opened"
 msgstr ""
 
-#: golf/models.py:173
+#: golf/models.py:180
 msgid "order pending"
 msgstr ""
 
-#: golf/models.py:174
+#: golf/models.py:181
 msgid "payment pending"
 msgstr ""
 
-#: golf/models.py:175
+#: golf/models.py:182
 msgid "order complete"
 msgstr ""
 
-#: golf/models.py:176
+#: golf/models.py:183
 msgid "order offered"
 msgstr ""
 
-#: golf/models.py:177
+#: golf/models.py:184
 msgid "order voided"
 msgstr ""
 
-#: golf/models.py:178
+#: golf/models.py:185
 msgid "refund requested"
 msgstr ""
 
-#: golf/models.py:179
+#: golf/models.py:186
 msgid "refund pending"
 msgstr ""
 
-#: golf/models.py:180
+#: golf/models.py:187
 msgid "order refunded(original)"
 msgstr ""
 
-#: golf/models.py:181
+#: golf/models.py:188
 msgid "order refunded(reverse)"
 msgstr ""
 
-#: golf/models.py:185
+#: golf/models.py:192
 msgid "UUID"
 msgstr ""
 
-#: golf/models.py:193
+#: golf/models.py:200
 msgid "Requester"
 msgstr ""
 
-#: golf/models.py:201
+#: golf/models.py:208
 msgid "Round day"
 msgstr ""
 
-#: golf/models.py:206
+#: golf/models.py:213
 msgid "Round time"
 msgstr ""
 
-#: golf/models.py:210
+#: golf/models.py:217
 msgid "Pax"
 msgstr ""
 
-#: golf/models.py:214
+#: golf/models.py:229
 msgid "Green fee sales"
 msgstr ""
 
-#: golf/models.py:221
+#: golf/models.py:236
 #, fuzzy
 #| msgid "Cart fee"
 msgid "Cart fee sales"
 msgstr "Cart fee"
 
-#: golf/models.py:228
+#: golf/models.py:243
 #, fuzzy
 #| msgid "Caddie fee"
 msgid "Caddie fee sales"
 msgstr "Caddie fee"
 
-#: golf/models.py:235
+#: golf/models.py:250
 msgid "Green fee pay on arrival"
 msgstr ""
 
-#: golf/models.py:241
+#: golf/models.py:256
 msgid "Cart fee pay on arrival"
 msgstr ""
 
-#: golf/models.py:247
+#: golf/models.py:262
 #, fuzzy
 #| msgid "Caddie fee"
 msgid "Caddie fee pay on arrival"
 msgstr "Caddie fee"
 
-#: golf/models.py:253
+#: golf/models.py:268
 msgid "Green fee cost"
 msgstr ""
 
-#: golf/models.py:260
+#: golf/models.py:275
 #, fuzzy
 #| msgid "Cart fee"
 msgid "Cart fee cost"
 msgstr "Cart fee"
 
-#: golf/models.py:267
+#: golf/models.py:282
+#, fuzzy
+#| msgid "Cart fee"
+msgid "Cart fee deducted from deposit"
+msgstr "Cart fee"
+
+#: golf/models.py:287
 #, fuzzy
 #| msgid "Caddie fee"
 msgid "Caddie fee cost"
 msgstr "Caddie fee"
 
-#: golf/models.py:274
+#: golf/models.py:294
 msgid "First name"
 msgstr ""
 
-#: golf/models.py:279
+#: golf/models.py:299
 msgid "Last name"
 msgstr ""
 
-#: golf/models.py:284
+#: golf/models.py:304
 #, fuzzy
 #| msgid "Golf club name"
 msgid "Full name"
 msgstr "Golf club name"
 
-#: golf/models.py:289
+#: golf/models.py:309
 msgid "Memo"
 msgstr ""
 
-#: golf/models.py:295
+#: golf/models.py:315
 #, fuzzy
 #| msgid "High season"
 msgid "High/Low Season"
 msgstr "High season"
 
-#: golf/models.py:302
+#: golf/models.py:322
 msgid "Day of week"
 msgstr ""
 
-#: golf/models.py:309
+#: golf/models.py:329
 msgid "Time slot"
 msgstr ""
 
-#: golf/models.py:316
+#: golf/models.py:336
 msgid "Booking status"
 msgstr ""
 
-#: golf/models.py:323 golf/models.py:324 golf/models.py:333
+#: golf/models.py:343 golf/models.py:344 golf/models.py:353
 msgid "Booking"
 msgstr ""
 
-#: golf/models.py:339
+#: golf/models.py:359
 msgid "Tee off time"
 msgstr ""
 
-#: golf/models.py:347 golf/models.py:348
+#: golf/models.py:365 golf/models.py:366
 msgid "Booking tee-off"
 msgstr ""
 
