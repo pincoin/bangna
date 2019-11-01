@@ -1,3 +1,4 @@
+import re
 import uuid
 from decimal import Decimal
 
@@ -302,11 +303,6 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         max_length=255,
     )
 
-    fullname = models.CharField(
-        verbose_name=_('Full name'),
-        max_length=255,
-    )
-
     memo = models.TextField(
         verbose_name=_('Memo'),
         blank=True,
@@ -347,6 +343,15 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
 
     def __str__(self):
         return '{}-{} {}'.format(self.booking_uuid, self.first_name, self.last_name)
+
+    @property
+    def fullname(self):
+        pattern = re.compile(r'^[가-힣]+$')  # Only Hangul
+
+        if pattern.match(self.last_name) and pattern.match(self.first_name):
+            return '{}{}'.format(self.last_name, self.first_name)
+        else:
+            return '{} {}'.format(self.first_name, self.last_name)
 
 
 class BookingTeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStampedModel):
