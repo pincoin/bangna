@@ -25,7 +25,7 @@ class GolfClubAdmin(admin.ModelAdmin):
 
 class BookingAdmin(admin.ModelAdmin):
     list_display = (
-        'fullname', 'round_date', 'hole', 'pax',
+        'fullname', 'gender', 'round_date', 'hole', 'pax',
         'green_fee_pay_on_arrival', 'green_fee_sales',
         'cart_fee_pay_on_arrival', 'cart_fee_sales', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',
         'caddie_fee_pay_on_arrival', 'caddie_fee_cost',
@@ -38,7 +38,7 @@ class BookingAdmin(admin.ModelAdmin):
         }),
         (_('Customer info'), {
             'fields': (
-                'last_name', 'first_name', 'pax', 'memo',
+                'gender', 'last_name', 'first_name', 'pax', 'memo',
             )
         }),
         (_('Green fee'), {
@@ -59,7 +59,7 @@ class BookingAdmin(admin.ModelAdmin):
     )
     inlines = (BookingTeeOffInline,)
     date_hierarchy = 'round_date'
-    ordering = ('-round_date',)
+    ordering = ('-round_date', 'created')
 
 
 admin.site.register(models.Holiday, HolidayAdmin)

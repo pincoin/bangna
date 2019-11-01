@@ -190,6 +190,11 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         (9, 'refunded2', _('order refunded(reverse)')),  # refund order
     )
 
+    GENDER_CHOICES = Choices(
+        (0, 'male', _('Mr.')),
+        (1, 'female', _('Ms.')),
+    )
+
     booking_uuid = models.UUIDField(
         verbose_name=_('UUID'),
         unique=True,
@@ -301,6 +306,13 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     last_name = models.CharField(
         verbose_name=_('Last name'),
         max_length=255,
+    )
+
+    gender = models.IntegerField(
+        verbose_name=_('Gender'),
+        choices=GENDER_CHOICES,
+        default=GENDER_CHOICES.male,
+        db_index=True,
     )
 
     memo = models.TextField(
