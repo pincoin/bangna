@@ -433,6 +433,8 @@ class TeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStamp
         verbose_name = _('Tee-off')
         verbose_name_plural = _('Tee-off')
 
+        unique_together = ('round_date', 'tee_off_time')
+
     def __str__(self):
         return '{} {}'.format(
             self.round_date, self.tee_off_time
