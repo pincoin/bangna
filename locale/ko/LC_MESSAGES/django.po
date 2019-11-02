@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-02 18:55+0700\n"
+"POT-Creation-Date: 2019-11-02 21:08+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,7 +246,7 @@ msgstr "UUID"
 msgid "Requester"
 msgstr "요청인"
 
-#: golf/models.py:215
+#: golf/models.py:215 golf/models.py:422
 msgid "Round day"
 msgstr "라운딩일자"
 
@@ -346,13 +346,17 @@ msgstr "현장지불"
 msgid "Season / Day of week / Slot"
 msgstr "예약구분"
 
-#: golf/models.py:405
+#: golf/models.py:405 golf/models.py:427
 msgid "Tee off time"
 msgstr "티오프시각"
 
 #: golf/models.py:411 golf/models.py:412
 msgid "Booking tee-off"
 msgstr "예약 티오프"
+
+#: golf/models.py:433 golf/models.py:434
+msgid "Tee-off"
+msgstr "티오프"
 
 #: golf/views.py:10
 msgid "Calendar Year {}"

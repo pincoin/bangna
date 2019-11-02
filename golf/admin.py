@@ -63,6 +63,13 @@ class BookingAdmin(admin.ModelAdmin):
     ordering = ('-round_date', 'created')
 
 
+class TeeOffAdmin(admin.ModelAdmin):
+    list_display = ('round_date', 'tee_off_time')
+    date_hierarchy = 'round_date'
+    ordering = ('-round_date', 'tee_off_time')
+
+
 admin.site.register(models.Holiday, HolidayAdmin)
 admin.site.register(models.GolfClub, GolfClubAdmin)
 admin.site.register(models.Booking, BookingAdmin)
+admin.site.register(models.TeeOff, TeeOffAdmin)

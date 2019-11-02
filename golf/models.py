@@ -415,3 +415,25 @@ class BookingTeeOff(model_utils_models.SoftDeletableModel, model_utils_models.Ti
         return 'booking - {} / tee off - {}'.format(
             self.booking.booking_uuid, self.tee_off_time
         )
+
+
+class TeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStampedModel):
+    round_date = models.DateField(
+        verbose_name=_('Round day'),
+        db_index=True,
+    )
+
+    tee_off_time = models.TimeField(
+        verbose_name=_('Tee off time'),
+        null=True,
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('Tee-off')
+        verbose_name_plural = _('Tee-off')
+
+    def __str__(self):
+        return '{} {}'.format(
+            self.round_date, self.tee_off_time
+        )
