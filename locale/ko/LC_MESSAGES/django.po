@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-01 16:15+0700\n"
+"POT-Creation-Date: 2019-11-02 18:55+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,43 +192,43 @@ msgstr "야간"
 
 #: golf/models.py:181
 msgid "order opened"
-msgstr ""
+msgstr "접수대기"
 
 #: golf/models.py:182
 msgid "order pending"
-msgstr ""
+msgstr "예약대기"
 
 #: golf/models.py:183
 msgid "payment pending"
-msgstr ""
+msgstr "입금대기"
 
 #: golf/models.py:184
 msgid "order complete"
-msgstr ""
+msgstr "예약완료"
 
 #: golf/models.py:185
 msgid "order offered"
-msgstr ""
+msgstr "예약제안"
 
 #: golf/models.py:186
 msgid "order voided"
-msgstr ""
+msgstr "예약불가"
 
 #: golf/models.py:187
 msgid "refund requested"
-msgstr ""
+msgstr "환불요청"
 
 #: golf/models.py:188
 msgid "refund pending"
-msgstr ""
+msgstr "환불대기"
 
 #: golf/models.py:189
 msgid "order refunded(original)"
-msgstr ""
+msgstr "환불완료O"
 
 #: golf/models.py:190
 msgid "order refunded(reverse)"
-msgstr ""
+msgstr "환불완료R"
 
 #: golf/models.py:194
 msgid "Mr."
@@ -326,15 +326,31 @@ msgstr "시간대"
 msgid "Booking status"
 msgstr "예약상태"
 
-#: golf/models.py:353 golf/models.py:354 golf/models.py:387
+#: golf/models.py:353 golf/models.py:354 golf/models.py:399
 msgid "Booking"
 msgstr "예약"
 
+#: golf/models.py:368
+msgid "Fullname"
+msgstr "성명"
+
+#: golf/models.py:381
+msgid "Received on site"
+msgstr "현장수금"
+
+#: golf/models.py:387
+msgid "Paid on site"
+msgstr "현장지불"
+
 #: golf/models.py:393
+msgid "Season / Day of week / Slot"
+msgstr "예약구분"
+
+#: golf/models.py:405
 msgid "Tee off time"
 msgstr "티오프시각"
 
-#: golf/models.py:399 golf/models.py:400
+#: golf/models.py:411 golf/models.py:412
 msgid "Booking tee-off"
 msgstr "예약 티오프"
 

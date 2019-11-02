@@ -365,6 +365,8 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         else:
             return '{} {}'.format(self.first_name, self.last_name)
 
+    fullname.fget.short_description = _('Fullname')
+
     @property
     def received_on_site(self):
         total = 0
@@ -376,13 +378,19 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
             total += self.cart_fee_sales
         return total
 
+    received_on_site.fget.short_description = _('Received on site')
+
     @property
     def paid_on_site(self):
         return self.green_fee_cost + self.caddie_fee_cost + self.cart_fee_cost
 
+    paid_on_site.fget.short_description = _('Paid on site')
+
     @property
     def season_day_slot(self):
         return '{}/{}/{}'.format(self.get_season_display(), self.get_day_of_week_display(), self.get_slot_display())
+
+    season_day_slot.fget.short_description = _('Season / Day of week / Slot')
 
 
 class BookingTeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStampedModel):
