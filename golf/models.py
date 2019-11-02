@@ -380,6 +380,10 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     def paid_on_site(self):
         return self.green_fee_cost + self.caddie_fee_cost + self.cart_fee_cost
 
+    @property
+    def season_day_slot(self):
+        return '{}/{}/{}'.format(self.get_season_display(), self.get_day_of_week_display(), self.get_slot_display())
+
 
 class BookingTeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStampedModel):
     booking = models.ForeignKey(

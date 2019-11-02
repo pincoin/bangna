@@ -25,7 +25,7 @@ class GolfClubAdmin(admin.ModelAdmin):
 
 class BookingAdmin(admin.ModelAdmin):
     list_display = (
-        'fullname', 'gender', 'round_date', 'hole', 'pax',
+        'fullname', 'gender', 'round_date', 'hole', 'pax', 'season_day_slot', 'status',
         'green_fee_pay_on_arrival', 'green_fee_sales',
         'cart_fee_pay_on_arrival', 'cart_fee_sales', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',
         'caddie_fee_pay_on_arrival', 'caddie_fee_cost',
