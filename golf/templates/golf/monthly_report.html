@@ -1,0 +1,26 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">{{ page_title }}</h1>
+        </div>
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h5 class="title is-5">Jan</h5>
+                </div>
+                <div class="column">
+                    <h5 class="title is-5">Feb</h5>
+                </div>
+                <div class="column">
+                    <h5 class="title is-5">Mar</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

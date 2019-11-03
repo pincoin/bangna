@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-03 09:33+0700\n"
+"POT-Creation-Date: 2019-11-03 13:10+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,12 +125,12 @@ msgstr "이메일주소"
 msgid "Website"
 msgstr "홈페이지"
 
-#: golf/models.py:95 golf/models.py:225
+#: golf/models.py:95 golf/models.py:229
 msgid "No. of holes"
 msgstr "홀수"
 
-#: golf/models.py:105 golf/models.py:112 golf/models.py:236 golf/models.py:244
-#: golf/models.py:252 golf/models.py:278 golf/models.py:286 golf/models.py:298
+#: golf/models.py:105 golf/models.py:112 golf/models.py:240 golf/models.py:248
+#: golf/models.py:256 golf/models.py:282 golf/models.py:290 golf/models.py:302
 msgid "THB"
 msgstr "THB"
 
@@ -246,126 +246,138 @@ msgstr "UUID"
 msgid "Requester"
 msgstr "요청인"
 
-#: golf/models.py:215 golf/models.py:427
+#: golf/models.py:215 golf/models.py:431
 msgid "Round day"
 msgstr "라운딩일자"
 
 #: golf/models.py:220
+msgid "Round time"
+msgstr "라운딩시각"
+
+#: golf/models.py:224
 msgid "Pax"
 msgstr "인원"
 
-#: golf/models.py:232
+#: golf/models.py:236
 msgid "Green fee sales"
 msgstr "그린피 입금"
 
-#: golf/models.py:240
+#: golf/models.py:244
 msgid "Cart fee sales"
 msgstr "카트피 입금"
 
-#: golf/models.py:248
+#: golf/models.py:252
 msgid "Caddie fee sales"
 msgstr "캐디피 입금"
 
-#: golf/models.py:256
+#: golf/models.py:260
 msgid "Green fee pay on arrival"
 msgstr "그린피 현장 수금"
 
-#: golf/models.py:262
+#: golf/models.py:266
 msgid "Cart fee pay on arrival"
 msgstr "카트피 현장 수금"
 
-#: golf/models.py:268
+#: golf/models.py:272
 msgid "Caddie fee pay on arrival"
 msgstr "캐디피 현장 수금"
 
-#: golf/models.py:274
+#: golf/models.py:278
 msgid "Green fee cost"
 msgstr "그린피 결제"
 
-#: golf/models.py:282
+#: golf/models.py:286
 msgid "Cart fee cost"
 msgstr "카트피 결제"
 
-#: golf/models.py:290
+#: golf/models.py:294
 msgid "Cart fee deducted from deposit"
 msgstr "카트피 선불카드 차감"
 
-#: golf/models.py:295
+#: golf/models.py:299
 msgid "Caddie fee cost"
 msgstr "캐디피 결제"
 
-#: golf/models.py:302
+#: golf/models.py:306
 msgid "First name"
 msgstr "이름"
 
-#: golf/models.py:307
+#: golf/models.py:311
 msgid "Last name"
 msgstr "성"
 
-#: golf/models.py:312
+#: golf/models.py:316
 msgid "Gender"
 msgstr "성별"
 
-#: golf/models.py:319 golf/models.py:438
+#: golf/models.py:323 golf/models.py:442
 msgid "Memo"
 msgstr "메모"
 
-#: golf/models.py:325
+#: golf/models.py:329
 msgid "High/Low Season"
 msgstr "성수기/비수기"
 
-#: golf/models.py:332
+#: golf/models.py:336
 msgid "Day of week"
 msgstr "평일/주말(공휴일)"
 
-#: golf/models.py:339
+#: golf/models.py:343
 msgid "Time slot"
 msgstr "시간대"
 
-#: golf/models.py:346
+#: golf/models.py:350
 msgid "Booking status"
 msgstr "예약상태"
 
-#: golf/models.py:353
+#: golf/models.py:357
 msgid "Stand-by"
 msgstr "대기"
 
-#: golf/models.py:358 golf/models.py:359 golf/models.py:404
+#: golf/models.py:362 golf/models.py:363 golf/models.py:408
 msgid "Booking"
 msgstr "예약"
 
-#: golf/models.py:373
+#: golf/models.py:377
 msgid "Fullname"
 msgstr "성명"
 
-#: golf/models.py:386
+#: golf/models.py:390
 msgid "Received on site"
 msgstr "현장수금"
 
-#: golf/models.py:392
+#: golf/models.py:396
 msgid "Paid on site"
 msgstr "현장지불"
 
-#: golf/models.py:398
+#: golf/models.py:402
 msgid "Season / Day of week / Slot"
 msgstr "예약구분"
 
-#: golf/models.py:410 golf/models.py:432
+#: golf/models.py:414 golf/models.py:436
 msgid "Tee off time"
 msgstr "티오프시각"
 
-#: golf/models.py:416 golf/models.py:417
+#: golf/models.py:420 golf/models.py:421
 msgid "Booking tee-off"
 msgstr "예약 티오프"
 
-#: golf/models.py:444
+#: golf/models.py:448
 msgid "Golf club staff"
 msgstr "담당자"
 
-#: golf/models.py:451 golf/models.py:452
+#: golf/models.py:455 golf/models.py:456
 msgid "Tee-off"
 msgstr "티오프"
 
-#: golf/views.py:10
+#: golf/views.py:14
 msgid "Calendar Year {}"
 msgstr "{}년 달력"
+
+#: golf/views.py:25
+msgid "Monthly Report - {} {}"
+msgstr "월간 보고서 - {} {}"
+
+#: golf/views.py:42
+msgid "Daily Report - {} {} {}"
+msgstr "일간 보고서 - {} {} {}"

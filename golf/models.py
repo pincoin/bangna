@@ -216,6 +216,10 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         db_index=True,
     )
 
+    round_time = models.TimeField(
+        verbose_name=_('Round time'),
+    )
+
     pax = models.IntegerField(
         verbose_name=_('Pax'),
         default=4,

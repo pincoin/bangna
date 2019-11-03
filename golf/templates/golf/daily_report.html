@@ -1,0 +1,72 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="container mb-30">
+            <h1 class="title">{{ page_title }}</h1>
+        </div>
+        <div class="container">
+            <div class="columns has-text-weight-bold ">
+                <div class="column">
+                    Name
+                </div>
+                <div class="column">
+                    Tee-off
+                </div>
+                <div class="column">
+                    PAX
+                </div>
+                <div class="column">
+                    Green Fee
+                </div>
+                <div class="column">
+                    Caddie Fee
+                </div>
+                <div class="column">
+                    Cart Fee
+                </div>
+                <div class="column">
+                    Cash on Site
+                </div>
+            </div>
+            {% for booking in booking_list %}
+                <div class="columns">
+                    <div class="column">
+                        {{ booking.fullname }}
+                    </div>
+                    <div class="column">
+                        {% for tee_off in booking.bookingteeoff_set.all %}
+                            {{ tee_off.tee_off_time }}
+                        {% endfor %}
+                    </div>
+                    <div class="column">
+                        {{ booking.pax }}
+                    </div>
+                    <div class="column">
+                        {{ booking.green_fee_sales }} - {{ booking.green_fee_cost }}
+                    </div>
+                    <div class="column">
+                        {{ booking.caddie_fee_sales }} - {{ booking.caddie_fee_cost }}
+                    </div>
+                    <div class="column">
+                        {{ booking.cart_fee_sales }} - {{ booking.cart_fee_cost }}
+                        / {{ booking.cart_fee_deducted_from_deposit }}
+                    </div>
+                    <div class="column">
+                        Cash On Site
+                    </div>
+                </div>
+            {% empty %}
+                <div class="columns">
+                    <div class="column">
+                        <h5 class="title is-5">No booking</h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
