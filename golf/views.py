@@ -39,7 +39,7 @@ class DailyReportListView(generic.ListView):
             .order_by('round_time')
 
         for booking in queryset:
-            booking.cashflow = Decimal('0.0')
+            booking.cashflow = Decimal('0')
 
             if booking.green_fee_pay_on_arrival:
                 booking.cashflow += booking.green_fee_sales
