@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-03 17:55+0700\n"
+"POT-Creation-Date: 2019-11-03 23:54+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -386,14 +386,18 @@ msgstr "인원"
 msgid "Cash flow"
 msgstr "현금흐름"
 
-#: golf/views.py:14
+#: golf/templates/golf/daily_report.html:94
+msgid "Total"
+msgstr "합계"
+
+#: golf/views.py:15
 msgid "Calendar Year {}"
 msgstr "{}년 달력"
 
-#: golf/views.py:25
+#: golf/views.py:26
 msgid "Monthly Report - {} {}"
 msgstr "월간 보고서 - {} {}"
 
-#: golf/views.py:43
+#: golf/views.py:88
 msgid "Daily Report - {} {} {}"
 msgstr "일간 보고서 - {} {} {}"
