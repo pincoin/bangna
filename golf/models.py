@@ -108,7 +108,7 @@ class GolfClub(model_utils_models.TimeStampedModel):
     caddie_fee = models.DecimalField(
         verbose_name=_('Caddie fee'),
         max_digits=11,
-        decimal_places=2,
+        decimal_places=0,
         help_text=_('THB'),
     )
 
@@ -235,7 +235,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     green_fee_sales = models.DecimalField(
         verbose_name=_('Green fee sales'),
         max_digits=11,
-        decimal_places=2,
+        decimal_places=0,
         default=Decimal('0.00'),
         help_text=_('THB'),
     )
@@ -243,7 +243,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     cart_fee_sales = models.DecimalField(
         verbose_name=_('Cart fee sales'),
         max_digits=11,
-        decimal_places=2,
+        decimal_places=0,
         default=Decimal('0.00'),
         help_text=_('THB'),
     )
@@ -251,7 +251,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     caddie_fee_sales = models.DecimalField(
         verbose_name=_('Caddie fee sales'),
         max_digits=11,
-        decimal_places=2,
+        decimal_places=0,
         default=Decimal('0.00'),
         help_text=_('THB'),
     )
@@ -277,7 +277,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     green_fee_cost = models.DecimalField(
         verbose_name=_('Green fee cost'),
         max_digits=11,
-        decimal_places=2,
+        decimal_places=0,
         default=Decimal('0.00'),
         help_text=_('THB'),
     )
@@ -285,7 +285,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     cart_fee_cost = models.DecimalField(
         verbose_name=_('Cart fee cost'),
         max_digits=11,
-        decimal_places=2,
+        decimal_places=0,
         default=Decimal('0.00'),
         help_text=_('THB'),
     )
@@ -298,7 +298,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     caddie_fee_cost = models.DecimalField(
         verbose_name=_('Caddie fee cost'),
         max_digits=11,
-        decimal_places=2,
+        decimal_places=0,
         help_text=_('THB'),
     )
 
