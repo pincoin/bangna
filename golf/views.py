@@ -36,6 +36,7 @@ class DailyReportListView(generic.ListView):
     total_green_fee = Decimal('0')
     total_caddie_fee = Decimal('0')
     total_cart_fee = Decimal('0')
+    total_cart = Decimal('0')
     total_cashflow = Decimal('0')
 
     def get_queryset(self):
@@ -79,6 +80,8 @@ class DailyReportListView(generic.ListView):
 
             self.total_cart_fee -= booking.cart_fee_cost
 
+            self.total_cart += booking.cart_fee_deducted_from_deposit
+
             self.total_cashflow += booking.cashflow
 
         return queryset
@@ -94,6 +97,7 @@ class DailyReportListView(generic.ListView):
         context['total_green_fee'] = self.total_green_fee
         context['total_caddie_fee'] = self.total_caddie_fee
         context['total_cart_fee'] = self.total_cart_fee
+        context['total_cart'] = self.total_cart
         context['total_cashflow'] = self.total_cashflow
 
         return context
