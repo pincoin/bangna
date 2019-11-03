@@ -36,6 +36,25 @@ class DailyReportListView(generic.ListView):
             .prefetch_related('bookingteeoff_set') \
             .filter(round_date='{}-{}-{}'.format(self.kwargs['year'], self.kwargs['month'], self.kwargs['day'])) \
             .order_by('round_time')
+
+        for booking in queryset:
+            booking.cashflow = 0
+
+            if booking.green_fee_pay_on_arrival:
+                booking.cashflow += booking.green_fee_sales
+
+            booking.cashflow -= booking.green_fee_cost
+
+            if booking.caddie_fee_pay_on_arrival:
+                booking.cashflow += booking.caddie_fee_pay_on_arrival
+
+            booking.cashflow -= booking.caddie_fee_cost
+
+            if booking.cart_fee_pay_on_arrival:
+                booking.cashflow += booking.cart_fee_pay_on_arrival
+
+            booking.cashflow -= booking.cart_fee_cost
+
         return queryset
 
     def get_context_data(self, **kwargs):

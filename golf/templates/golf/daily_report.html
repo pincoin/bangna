@@ -85,7 +85,7 @@
                         / {{ booking.cart_fee_deducted_from_deposit|floatformat:"0"|intcomma }}
                     </div>
                     <div class="column">
-                        Cash On Site
+                        {{ booking.cashflow|floatformat:"0"|intcomma }}
                     </div>
                 </div>
             {% empty %}
