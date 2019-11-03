@@ -10,7 +10,7 @@
             <h1 class="title">{{ page_title }}</h1>
         </div>
         <div class="container">
-            <div class="columns has-text-weight-bold ">
+            <div class="columns has-text-weight-bold">
                 <div class="column">
                     {% trans 'Customer name' %}
                 </div>
@@ -88,6 +88,31 @@
                         {{ booking.cashflow|intcomma }}
                     </div>
                 </div>
+                {% if forloop.last %}
+                    <div class="columns">
+                        <div class="column">
+                            {% trans 'Total' %}
+                        </div>
+                        <div class="column">
+
+                        </div>
+                        <div class="column">
+                            {{ total_pax }}
+                        </div>
+                        <div class="column">
+                            {{ total_green_fee }}
+                        </div>
+                        <div class="column">
+                            {{ total_caddie_fee }}
+                        </div>
+                        <div class="column">
+                            {{ total_cart_fee }}
+                        </div>
+                        <div class="column">
+                            {{ total_cashflow }}
+                        </div>
+                    </div>
+                {% endif %}
             {% empty %}
                 <div class="columns">
                     <div class="column">

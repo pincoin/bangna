@@ -32,6 +32,12 @@ class MonthlyReportListView(generic.TemplateView):
 class DailyReportListView(generic.ListView):
     template_name = 'golf/daily_report.html'
 
+    total_pax = Decimal('0')
+    total_green_fee = Decimal('0')
+    total_caddie_fee = Decimal('0')
+    total_cart_fee = Decimal('0')
+    total_cashflow = Decimal('0')
+
     def get_queryset(self):
         queryset = models.Booking.objects \
             .prefetch_related('bookingteeoff_set') \
@@ -41,23 +47,33 @@ class DailyReportListView(generic.ListView):
         for booking in queryset:
             booking.cashflow = Decimal('0')
 
+            self.total_pax += booking.pax
+
             if booking.green_fee_pay_on_arrival:
                 booking.cashflow += booking.green_fee_sales
+                self.total_green_fee += booking.green_fee_sales
 
             if booking.green_fee_cost:
                 booking.cashflow -= booking.green_fee_cost
+                self.total_green_fee -= booking.green_fee_cost
 
             if booking.caddie_fee_pay_on_arrival:
                 booking.cashflow += booking.caddie_fee_sales
+                self.total_caddie_fee += booking.caddie_fee_sales
 
             if booking.caddie_fee_cost:
                 booking.cashflow -= booking.caddie_fee_cost
+                self.total_caddie_fee -= booking.caddie_fee_cost
 
             if booking.cart_fee_pay_on_arrival:
                 booking.cashflow += booking.cart_fee_sales
+                self.total_cart_fee += booking.cart_fee_sales
 
             if booking.cart_fee_cost:
                 booking.cashflow -= booking.cart_fee_cost
+                self.total_cart_fee -= booking.cart_fee_cost
+
+            self.total_cashflow += booking.cashflow
 
         return queryset
 
@@ -67,5 +83,11 @@ class DailyReportListView(generic.ListView):
                                   .format(self.kwargs['day'],
                                           calendar.month_name[int(self.kwargs['month'])],
                                           self.kwargs['year']))
+
+        context['total_pax'] = self.total_pax
+        context['total_green_fee'] = self.total_green_fee
+        context['total_caddie_fee'] = self.total_caddie_fee
+        context['total_cart_fee'] = self.total_cart_fee
+        context['total_cashflow'] = self.total_cashflow
 
         return context
