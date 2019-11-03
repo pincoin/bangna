@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-03 13:10+0700\n"
+"POT-Creation-Date: 2019-11-03 17:55+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,15 +37,15 @@ msgstr ""
 msgid "Customer info"
 msgstr ""
 
-#: golf/admin.py:45
+#: golf/admin.py:45 golf/templates/golf/daily_report.html:24
 msgid "Green fee"
 msgstr ""
 
-#: golf/admin.py:50 golf/models.py:109
+#: golf/admin.py:50 golf/models.py:109 golf/templates/golf/daily_report.html:27
 msgid "Caddie fee"
 msgstr ""
 
-#: golf/admin.py:55 golf/models.py:102
+#: golf/admin.py:55 golf/models.py:102 golf/templates/golf/daily_report.html:30
 msgid "Cart fee"
 msgstr ""
 
@@ -374,6 +374,22 @@ msgstr "กอล์ฟ"
 msgid "Tee-off"
 msgstr ""
 
+#: golf/templates/golf/daily_report.html:15
+msgid "Customer name"
+msgstr ""
+
+#: golf/templates/golf/daily_report.html:18
+msgid "Tee-off time"
+msgstr ""
+
+#: golf/templates/golf/daily_report.html:21
+msgid "PAX"
+msgstr ""
+
+#: golf/templates/golf/daily_report.html:33
+msgid "Cash flow"
+msgstr ""
+
 #: golf/views.py:14
 msgid "Calendar Year {}"
 msgstr ""
@@ -382,6 +398,6 @@ msgstr ""
 msgid "Monthly Report - {} {}"
 msgstr ""
 
-#: golf/views.py:42
+#: golf/views.py:43
 msgid "Daily Report - {} {} {}"
 msgstr ""

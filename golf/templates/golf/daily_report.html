@@ -12,25 +12,25 @@
         <div class="container">
             <div class="columns has-text-weight-bold ">
                 <div class="column">
-                    Name
+                    {% trans 'Customer name' %}
                 </div>
                 <div class="column">
-                    Tee-off
+                    {% trans 'Tee-off time' %}
                 </div>
                 <div class="column">
-                    PAX
+                    {% trans 'PAX' %}
                 </div>
                 <div class="column">
-                    Green Fee
+                    {% trans 'Green fee' %}
                 </div>
                 <div class="column">
-                    Caddie Fee
+                    {% trans 'Caddie fee' %}
                 </div>
                 <div class="column">
-                    Cart Fee
+                    {% trans 'Cart fee' %}
                 </div>
                 <div class="column">
-                    Cash on Site
+                    {% trans 'Cash flow' %}
                 </div>
             </div>
             {% for booking in booking_list %}
@@ -48,7 +48,7 @@
                         {{ booking.pax }}
                     </div>
                     <div class="column">
-                        {{ booking.green_fee_sales }} - {{ booking.green_fee_cost }}
+                        {{ booking.green_fee_sales|intcomma }} - {{ booking.green_fee_cost }}
                     </div>
                     <div class="column">
                         {{ booking.caddie_fee_sales }} - {{ booking.caddie_fee_cost }}
