@@ -349,6 +349,11 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         db_index=True,
     )
 
+    stand_by = models.BooleanField(
+        verbose_name=_('Stand-by'),
+        default=False,
+    )
+
     class Meta:
         verbose_name = _('Booking')
         verbose_name_plural = _('Booking')
@@ -427,6 +432,19 @@ class TeeOff(model_utils_models.SoftDeletableModel, model_utils_models.TimeStamp
         verbose_name=_('Tee off time'),
         null=True,
         blank=True,
+    )
+
+    memo = models.TextField(
+        verbose_name=_('Memo'),
+        blank=True,
+        null=True,
+    )
+
+    staff = models.CharField(
+        verbose_name=_('Golf club staff'),
+        max_length=255,
+        blank=True,
+        null=True,
     )
 
     class Meta:

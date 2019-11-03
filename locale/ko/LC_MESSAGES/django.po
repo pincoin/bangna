@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-02 21:08+0700\n"
+"POT-Creation-Date: 2019-11-03 09:33+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,7 +246,7 @@ msgstr "UUID"
 msgid "Requester"
 msgstr "요청인"
 
-#: golf/models.py:215 golf/models.py:422
+#: golf/models.py:215 golf/models.py:427
 msgid "Round day"
 msgstr "라운딩일자"
 
@@ -306,7 +306,7 @@ msgstr "성"
 msgid "Gender"
 msgstr "성별"
 
-#: golf/models.py:319
+#: golf/models.py:319 golf/models.py:438
 msgid "Memo"
 msgstr "메모"
 
@@ -326,35 +326,43 @@ msgstr "시간대"
 msgid "Booking status"
 msgstr "예약상태"
 
-#: golf/models.py:353 golf/models.py:354 golf/models.py:399
+#: golf/models.py:353
+msgid "Stand-by"
+msgstr "대기"
+
+#: golf/models.py:358 golf/models.py:359 golf/models.py:404
 msgid "Booking"
 msgstr "예약"
 
-#: golf/models.py:368
+#: golf/models.py:373
 msgid "Fullname"
 msgstr "성명"
 
-#: golf/models.py:381
+#: golf/models.py:386
 msgid "Received on site"
 msgstr "현장수금"
 
-#: golf/models.py:387
+#: golf/models.py:392
 msgid "Paid on site"
 msgstr "현장지불"
 
-#: golf/models.py:393
+#: golf/models.py:398
 msgid "Season / Day of week / Slot"
 msgstr "예약구분"
 
-#: golf/models.py:405 golf/models.py:427
+#: golf/models.py:410 golf/models.py:432
 msgid "Tee off time"
 msgstr "티오프시각"
 
-#: golf/models.py:411 golf/models.py:412
+#: golf/models.py:416 golf/models.py:417
 msgid "Booking tee-off"
 msgstr "예약 티오프"
 
-#: golf/models.py:433 golf/models.py:434
+#: golf/models.py:444
+msgid "Golf club staff"
+msgstr "담당자"
+
+#: golf/models.py:451 golf/models.py:452
 msgid "Tee-off"
 msgstr "티오프"
 

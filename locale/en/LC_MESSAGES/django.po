@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-02 21:08+0700\n"
+"POT-Creation-Date: 2019-11-03 09:33+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Requester"
 msgstr ""
 
-#: golf/models.py:215 golf/models.py:422
+#: golf/models.py:215 golf/models.py:427
 msgid "Round day"
 msgstr ""
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
-#: golf/models.py:319
+#: golf/models.py:319 golf/models.py:438
 msgid "Memo"
 msgstr ""
 
@@ -342,37 +342,47 @@ msgstr ""
 msgid "Booking status"
 msgstr ""
 
-#: golf/models.py:353 golf/models.py:354 golf/models.py:399
+#: golf/models.py:353
+msgid "Stand-by"
+msgstr ""
+
+#: golf/models.py:358 golf/models.py:359 golf/models.py:404
 msgid "Booking"
 msgstr ""
 
-#: golf/models.py:368
+#: golf/models.py:373
 #, fuzzy
 #| msgid "Golf club name"
 msgid "Fullname"
 msgstr "Golf club name"
 
-#: golf/models.py:381
+#: golf/models.py:386
 msgid "Received on site"
 msgstr ""
 
-#: golf/models.py:387
+#: golf/models.py:392
 msgid "Paid on site"
 msgstr ""
 
-#: golf/models.py:393
+#: golf/models.py:398
 msgid "Season / Day of week / Slot"
 msgstr ""
 
-#: golf/models.py:405 golf/models.py:427
+#: golf/models.py:410 golf/models.py:432
 msgid "Tee off time"
 msgstr ""
 
-#: golf/models.py:411 golf/models.py:412
+#: golf/models.py:416 golf/models.py:417
 msgid "Booking tee-off"
 msgstr ""
 
-#: golf/models.py:433 golf/models.py:434
+#: golf/models.py:444
+#, fuzzy
+#| msgid "Golf clubs"
+msgid "Golf club staff"
+msgstr "Golf clubs"
+
+#: golf/models.py:451 golf/models.py:452
 msgid "Tee-off"
 msgstr ""
 
