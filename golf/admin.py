@@ -64,7 +64,7 @@ class BookingAdmin(admin.ModelAdmin):
 
 
 class TeeOffAdmin(admin.ModelAdmin):
-    list_display = ('round_date', 'tee_off_time')
+    list_display = ('round_date', 'tee_off_time', 'staff')
     date_hierarchy = 'round_date'
     ordering = ('-round_date', 'tee_off_time')
 
