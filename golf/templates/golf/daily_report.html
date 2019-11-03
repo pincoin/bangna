@@ -48,7 +48,11 @@
                         {{ booking.pax }}
                     </div>
                     <div class="column">
-                        {{ booking.green_fee_sales|floatformat:"0"|intcomma }}
+                        {% if booking.green_fee_pay_on_arrival %}
+                            <span class="has-text-weight-bold">{{ booking.green_fee_sales|floatformat:"0"|intcomma }}</span>
+                        {% else %}
+                            {{ booking.green_fee_sales|floatformat:"0"|intcomma }}
+                        {% endif %}
                         {% if booking.green_fee_cost %}
                             <span class="has-text-danger">
                             - {{ booking.green_fee_cost|floatformat:"0"|intcomma }}
@@ -56,7 +60,11 @@
                         {% endif %}
                     </div>
                     <div class="column">
-                        {{ booking.caddie_fee_sales|floatformat:"0"|intcomma }}
+                        {% if booking.caddie_fee_pay_on_arrival %}
+                            <span class="has-text-weight-bold">{{ booking.caddie_fee_sales|floatformat:"0"|intcomma }}</span>
+                        {% else %}
+                            {{ booking.caddie_fee_sales|floatformat:"0"|intcomma }}
+                        {% endif %}
                         {% if booking.caddie_fee_cost %}
                             <span class="has-text-danger">
                                 - {{ booking.caddie_fee_cost|floatformat:"0"|intcomma }}
@@ -64,7 +72,11 @@
                         {% endif %}
                     </div>
                     <div class="column">
-                        {{ booking.cart_fee_sales|floatformat:"0"|intcomma }}
+                        {% if booking.cart_fee_pay_on_arrival %}
+                            <span class="has-text-weight-bold">{{ booking.cart_fee_sales|floatformat:"0"|intcomma }}</span>
+                        {% else %}
+                            {{ booking.cart_fee_sales|floatformat:"0"|intcomma }}
+                        {% endif %}
                         {% if booking.cart_fee_cost %}
                             <span class="has-text-danger">
                                 - {{ booking.cart_fee_cost|floatformat:"0"|intcomma }}
