@@ -97,19 +97,19 @@
 
                         </div>
                         <div class="column">
-                            {{ total_pax }}
+                            {{ total_pax|intcomma }}
                         </div>
                         <div class="column">
-                            {{ total_green_fee }}
+                            {{ total_green_fee|intcomma }}
                         </div>
                         <div class="column">
-                            {{ total_caddie_fee }}
+                            {{ total_caddie_fee|intcomma }}
                         </div>
                         <div class="column">
-                            {{ total_cart_fee }}
+                            {{ total_cart_fee|intcomma }}
                         </div>
                         <div class="column">
-                            {{ total_cashflow }}
+                            {{ total_cashflow|intcomma }}
                         </div>
                     </div>
                 {% endif %}
