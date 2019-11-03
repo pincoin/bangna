@@ -44,17 +44,20 @@ class DailyReportListView(generic.ListView):
             if booking.green_fee_pay_on_arrival:
                 booking.cashflow += booking.green_fee_sales
 
-            booking.cashflow -= booking.green_fee_cost
+            if booking.green_fee_cost:
+                booking.cashflow -= booking.green_fee_cost
 
             if booking.caddie_fee_pay_on_arrival:
                 booking.cashflow += booking.caddie_fee_pay_on_arrival
 
-            booking.cashflow -= booking.caddie_fee_cost
+            if booking.caddie_fee_cost:
+                booking.cashflow -= booking.caddie_fee_cost
 
             if booking.cart_fee_pay_on_arrival:
                 booking.cashflow += booking.cart_fee_pay_on_arrival
 
-            booking.cashflow -= booking.cart_fee_cost
+            if booking.green_fee_cost:
+                booking.cashflow -= booking.cart_fee_cost
 
         return queryset
 
