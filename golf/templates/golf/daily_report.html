@@ -61,31 +61,31 @@
                     </div>
                     <div class="column">
                         {% if booking.caddie_fee_pay_on_arrival %}
-                            <span class="has-text-weight-bold">{{ booking.caddie_fee_sales|floatformat:"0"|intcomma }}</span>
+                            <span class="has-text-weight-bold">{{ booking.caddie_fee_sales|intcomma }}</span>
                         {% else %}
-                            {{ booking.caddie_fee_sales|floatformat:"0"|intcomma }}
+                            {{ booking.caddie_fee_sales|intcomma }}
                         {% endif %}
                         {% if booking.caddie_fee_cost %}
                             <span class="has-text-danger">
-                                - {{ booking.caddie_fee_cost|floatformat:"0"|intcomma }}
+                                - {{ booking.caddie_fee_cost|intcomma }}
                             </span>
                         {% endif %}
                     </div>
                     <div class="column">
                         {% if booking.cart_fee_pay_on_arrival %}
-                            <span class="has-text-weight-bold">{{ booking.cart_fee_sales|floatformat:"0"|intcomma }}</span>
+                            <span class="has-text-weight-bold">{{ booking.cart_fee_sales|intcomma }}</span>
                         {% else %}
-                            {{ booking.cart_fee_sales|floatformat:"0"|intcomma }}
+                            {{ booking.cart_fee_sales|intcomma }}
                         {% endif %}
                         {% if booking.cart_fee_cost %}
                             <span class="has-text-danger">
-                                - {{ booking.cart_fee_cost|floatformat:"0"|intcomma }}
+                                - {{ booking.cart_fee_cost|intcomma }}
                             </span>
                         {% endif %}
-                        / {{ booking.cart_fee_deducted_from_deposit|floatformat:"0"|intcomma }}
+                        / {{ booking.cart_fee_deducted_from_deposit|intcomma }}
                     </div>
                     <div class="column">
-                        {{ booking.cashflow|floatformat:"0"|intcomma }}
+                        {{ booking.cashflow|intcomma }}
                     </div>
                 </div>
             {% empty %}
