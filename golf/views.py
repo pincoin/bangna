@@ -33,8 +33,9 @@ class DailyReportListView(generic.ListView):
 
     def get_queryset(self):
         queryset = models.Booking.objects \
-            .all() \
-            .order_by('bookingteeoff__tee_off_time')
+            .prefetch_related('bookingteeoff_set') \
+            .filter(round_date='{}-{}-{}'.format(self.kwargs['year'], self.kwargs['month'], self.kwargs['day'])) \
+            .order_by('round_time')
         return queryset
 
     def get_context_data(self, **kwargs):

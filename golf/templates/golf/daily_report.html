@@ -40,7 +40,8 @@
                     </div>
                     <div class="column">
                         {% for tee_off in booking.bookingteeoff_set.all %}
-                            {{ tee_off.tee_off_time }}
+                            {% if not forloop.first %}/{% endif %}
+                            {{ tee_off.tee_off_time|time:"H:i" }}
                         {% endfor %}
                     </div>
                     <div class="column">
