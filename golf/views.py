@@ -51,27 +51,33 @@ class DailyReportListView(generic.ListView):
 
             if booking.green_fee_pay_on_arrival:
                 booking.cashflow += booking.green_fee_sales
-                self.total_green_fee += booking.green_fee_sales
+
+            self.total_green_fee += booking.green_fee_sales
 
             if booking.green_fee_cost:
                 booking.cashflow -= booking.green_fee_cost
-                self.total_green_fee -= booking.green_fee_cost
+
+            self.total_green_fee -= booking.green_fee_cost
 
             if booking.caddie_fee_pay_on_arrival:
                 booking.cashflow += booking.caddie_fee_sales
-                self.total_caddie_fee += booking.caddie_fee_sales
+
+            self.total_caddie_fee += booking.caddie_fee_sales
 
             if booking.caddie_fee_cost:
                 booking.cashflow -= booking.caddie_fee_cost
-                self.total_caddie_fee -= booking.caddie_fee_cost
+
+            self.total_caddie_fee -= booking.caddie_fee_cost
 
             if booking.cart_fee_pay_on_arrival:
                 booking.cashflow += booking.cart_fee_sales
-                self.total_cart_fee += booking.cart_fee_sales
+
+            self.total_cart_fee += booking.cart_fee_sales
 
             if booking.cart_fee_cost:
                 booking.cashflow -= booking.cart_fee_cost
-                self.total_cart_fee -= booking.cart_fee_cost
+
+            self.total_cart_fee -= booking.cart_fee_cost
 
             self.total_cashflow += booking.cashflow
 
