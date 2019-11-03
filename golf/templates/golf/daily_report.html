@@ -48,14 +48,17 @@
                         {{ booking.pax }}
                     </div>
                     <div class="column">
-                        {{ booking.green_fee_sales|intcomma }} - {{ booking.green_fee_cost|intcomma }}
+                        {{ booking.green_fee_sales|floatformat:"0"|intcomma }}
+                        - {{ booking.green_fee_cost|floatformat:"0"|intcomma }}
                     </div>
                     <div class="column">
-                        {{ booking.caddie_fee_sales|intcomma }} - {{ booking.caddie_fee_cost|intcomma }}
+                        {{ booking.caddie_fee_sales|floatformat:"0"|intcomma }}
+                        - {{ booking.caddie_fee_cost|floatformat:"0"|intcomma }}
                     </div>
                     <div class="column">
-                        {{ booking.cart_fee_sales|intcomma }} - {{ booking.cart_fee_cost|intcomma }}
-                        / {{ booking.cart_fee_deducted_from_deposit|intcomma }}
+                        {{ booking.cart_fee_sales|floatformat:"0"|intcomma }}
+                        - {{ booking.cart_fee_cost|floatformat:"0"|intcomma }}
+                        / {{ booking.cart_fee_deducted_from_deposit|floatformat:"0"|intcomma }}
                     </div>
                     <div class="column">
                         Cash On Site
