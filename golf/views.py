@@ -1,4 +1,5 @@
 import calendar
+from decimal import Decimal
 
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
@@ -38,7 +39,7 @@ class DailyReportListView(generic.ListView):
             .order_by('round_time')
 
         for booking in queryset:
-            booking.cashflow = 0
+            booking.cashflow = Decimal('0.0')
 
             if booking.green_fee_pay_on_arrival:
                 booking.cashflow += booking.green_fee_sales
