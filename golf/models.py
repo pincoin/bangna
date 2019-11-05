@@ -236,7 +236,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         verbose_name=_('Green fee sales'),
         max_digits=11,
         decimal_places=0,
-        default=Decimal('0.00'),
+        default=Decimal('0'),
         help_text=_('THB'),
     )
 
@@ -244,7 +244,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         verbose_name=_('Cart fee sales'),
         max_digits=11,
         decimal_places=0,
-        default=Decimal('0.00'),
+        default=Decimal('0'),
         help_text=_('THB'),
     )
 
@@ -252,7 +252,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         verbose_name=_('Caddie fee sales'),
         max_digits=11,
         decimal_places=0,
-        default=Decimal('0.00'),
+        default=Decimal('0'),
         help_text=_('THB'),
     )
 
@@ -278,7 +278,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         verbose_name=_('Green fee cost'),
         max_digits=11,
         decimal_places=0,
-        default=Decimal('0.00'),
+        default=Decimal('0'),
         help_text=_('THB'),
     )
 
@@ -286,7 +286,7 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
         verbose_name=_('Cart fee cost'),
         max_digits=11,
         decimal_places=0,
-        default=Decimal('0.00'),
+        default=Decimal('0'),
         help_text=_('THB'),
     )
 
