@@ -396,6 +396,12 @@ class Booking(model_utils_models.SoftDeletableModel, model_utils_models.TimeStam
     paid_on_site.fget.short_description = _('Paid on site')
 
     @property
+    def cashflow(self):
+        return self.received_on_site - self.paid_on_site
+
+    paid_on_site.fget.short_description = _('Cashflow')
+
+    @property
     def season_day_slot(self):
         return '{}/{}/{}'.format(self.get_season_display(), self.get_day_of_week_display(), self.get_slot_display())
 
