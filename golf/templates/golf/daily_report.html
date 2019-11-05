@@ -84,6 +84,8 @@
                             </span>
                             {% endif %}
                             / -{{ booking.cart_fee_deducted_from_deposit|intcomma }}
+                        {% else %}
+                            {% trans 'No cart' %}
                         {% endif %}
                     </div>
                     <div class="column">

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-03 23:54+0700\n"
+"POT-Creation-Date: 2019-11-05 13:10+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,7 +246,7 @@ msgstr "UUID"
 msgid "Requester"
 msgstr "요청인"
 
-#: golf/models.py:215 golf/models.py:431
+#: golf/models.py:215 golf/models.py:437
 msgid "Round day"
 msgstr "라운딩일자"
 
@@ -310,7 +310,7 @@ msgstr "성"
 msgid "Gender"
 msgstr "성별"
 
-#: golf/models.py:323 golf/models.py:442
+#: golf/models.py:323 golf/models.py:448
 msgid "Memo"
 msgstr "메모"
 
@@ -334,7 +334,7 @@ msgstr "예약상태"
 msgid "Stand-by"
 msgstr "대기"
 
-#: golf/models.py:362 golf/models.py:363 golf/models.py:408
+#: golf/models.py:362 golf/models.py:363 golf/models.py:414
 msgid "Booking"
 msgstr "예약"
 
@@ -351,22 +351,28 @@ msgid "Paid on site"
 msgstr "현장지불"
 
 #: golf/models.py:402
+#, fuzzy
+#| msgid "Cash flow"
+msgid "Cashflow"
+msgstr "현금흐름"
+
+#: golf/models.py:408
 msgid "Season / Day of week / Slot"
 msgstr "예약구분"
 
-#: golf/models.py:414 golf/models.py:436
+#: golf/models.py:420 golf/models.py:442
 msgid "Tee off time"
 msgstr "티오프시각"
 
-#: golf/models.py:420 golf/models.py:421
+#: golf/models.py:426 golf/models.py:427
 msgid "Booking tee-off"
 msgstr "예약 티오프"
 
-#: golf/models.py:448
+#: golf/models.py:454
 msgid "Golf club staff"
 msgstr "담당자"
 
-#: golf/models.py:455 golf/models.py:456
+#: golf/models.py:461 golf/models.py:462
 msgid "Tee-off"
 msgstr "티오프"
 
@@ -386,7 +392,11 @@ msgstr "인원"
 msgid "Cash flow"
 msgstr "현금흐름"
 
-#: golf/templates/golf/daily_report.html:94
+#: golf/templates/golf/daily_report.html:88
+msgid "No cart"
+msgstr "카트없음"
+
+#: golf/templates/golf/daily_report.html:102
 msgid "Total"
 msgstr "합계"
 
@@ -398,6 +408,6 @@ msgstr "{}년 달력"
 msgid "Monthly Report - {} {}"
 msgstr "월간 보고서 - {} {}"
 
-#: golf/views.py:88
+#: golf/views.py:71
 msgid "Daily Report - {} {} {}"
 msgstr "일간 보고서 - {} {} {}"
