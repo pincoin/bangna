@@ -85,7 +85,7 @@
                         / {{ booking.cart_fee_deducted_from_deposit|intcomma }}
                     </div>
                     <div class="column">
-                        {{ booking.recieved_on_site|default:"0"|intcomma }}
+                        {{ booking.received_on_site|intcomma }}
                         <span class="has-text-danger">
                         - {{ booking.paid_on_site|intcomma }}
                         </span>
