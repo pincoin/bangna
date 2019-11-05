@@ -72,17 +72,19 @@
                         {% endif %}
                     </div>
                     <div class="column">
-                        {% if booking.cart_fee_pay_on_arrival %}
-                            <span class="has-text-weight-bold">{{ booking.cart_fee_sales|intcomma }}</span>
-                        {% else %}
-                            {{ booking.cart_fee_sales|intcomma }}
-                        {% endif %}
-                        {% if booking.cart_fee_cost %}
-                            <span class="has-text-danger">
+                        {% if booking.cart_fee_sales %}
+                            {% if booking.cart_fee_pay_on_arrival %}
+                                <span class="has-text-weight-bold">{{ booking.cart_fee_sales|intcomma }}</span>
+                            {% else %}
+                                {{ booking.cart_fee_sales|intcomma }}
+                            {% endif %}
+                            {% if booking.cart_fee_cost %}
+                                <span class="has-text-danger">
                                 - {{ booking.cart_fee_cost|intcomma }}
                             </span>
+                            {% endif %}
+                            / -{{ booking.cart_fee_deducted_from_deposit|intcomma }}
                         {% endif %}
-                        / {{ booking.cart_fee_deducted_from_deposit|intcomma }}
                     </div>
                     <div class="column">
                         {{ booking.received_on_site|intcomma }}
@@ -110,7 +112,7 @@
                             {{ total_caddie_fee|intcomma }}
                         </div>
                         <div class="column">
-                            {{ total_cart_fee|intcomma }} / {{ total_cart }}
+                            {{ total_cart_fee|intcomma }} / -{{ total_cart }}
                         </div>
                         <div class="column">
                             {{ total_cashflow|intcomma }}
